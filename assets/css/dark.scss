@@ -1,0 +1,1088 @@
+/*================================================
+Default CSS
+=================================================*/
+$main-color: #207ef7;
+$white-color: #ffffff;
+$black-color: #000000;
+
+//dark version switch css
+.dark-version {
+    position: fixed;
+    z-index: 1;
+    right: 15px;
+    bottom: 60px;
+    
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $main-color;
+        transition: 0.4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 2.5px;
+            bottom: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            transition: 0.4s;
+            box-shadow: 0 0px 15px #2020203d;
+            background: white url('https://i.ibb.co/FxzBYR9/night.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    input:checked + .slider {
+        background-color: $main-color;
+    }
+    input:focus + .slider {
+        box-shadow: 0 0 1px $main-color;
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(24px);
+        -ms-transform: translateX(24px);
+        transform: translateX(24px);
+        background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .slider {
+        &.round {
+            border-radius: 50px;
+
+            &:before {
+                border-radius: 50%;
+            } 
+        }
+    }
+}
+
+// Dark & Light CSS
+.theme-light {
+    .black-logo {
+        display: block;
+    }
+    .white-logo {
+        display: none;
+    }
+    .white-image {
+        display: block;
+    }
+    .black-image {
+        display: none;
+    }
+}
+.theme-dark {
+    .black-logo {
+        display: none;
+    }
+    .white-logo {
+        display: block;
+    }
+    .black-image {
+        display: block;
+    }
+    .white-image {
+        display: none;
+    }
+    body {
+        background-color: $black-color;
+        color: #f1f1f1;
+    }
+    p {
+        color: #f1f1f1;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        color: $white-color;
+
+        a {
+            color: $white-color;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+
+    .main-navbar {
+        .navbar {
+            .navbar-nav {
+                .nav-item {
+                    a {
+                        color: $white-color;
+                        
+                        &:hover, &:focus, &.active {
+                            color: $main-color;
+                        }
+                    }
+                    &:hover, &.active {
+                        a {
+                            color: $main-color;
+                        }
+                    }
+                    .dropdown-menu {
+                        li {
+                            a {
+                                color: $black-color;
+                                
+                                &:hover, &:focus, &.active {
+                                    color: $main-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-area {
+        &.is-sticky {
+            background-color: $black-color !important;
+        }
+    }
+
+    .main-banner {
+        position: relative;
+        z-index: 1;
+        
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: $black-color;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: -1;
+            opacity: .95;
+        }
+        &.bg-two {
+            &::before {
+                opacity: .85;
+            }
+        }
+        &.bg-four .banner-form {
+            background-color: #07092b;
+
+            form {
+                .banner-form-btn {
+                    background-color: $black-color;
+
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .top-services-content {
+        background-color: $black-color;
+        border: 2px solid #181b27;
+
+        &.two {
+            &:hover {
+                border: 2px solid #181b27;
+            }
+        }
+    }
+
+    .services-item {
+        &::before {
+            background-color: $black-color;
+        }
+    }
+
+    .solutions-area {
+        position: relative;
+        z-index: 1;
+        padding: {
+            top: 100px;
+            bottom: 100px;
+        };
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: $black-color;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: -1;
+            opacity: .95;
+        }
+    }
+
+    .single-fun-fact {
+        background-color: $black-color;
+
+        &:hover {
+            background-color: $main-color;
+        }
+    }
+
+    .appointment-form {
+        background-color: $black-color;
+
+        &::before {
+            background-color: $black-color;
+        }
+        .form-group {
+            .form-control {
+                border: 1px dashed #07092b;
+                color: $white-color;
+                background-color: #07092b;
+    
+                &:focus {
+                    box-shadow: none;
+                }
+                &::placeholder {
+                    color: $white-color;
+                }
+            }
+        }
+        .nice-select {
+            border: 1px dashed #07092b;
+            color: $white-color;
+            background-color: #07092b;
+    
+            .list {
+                background-color: $black-color;
+
+                .option {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .consult-content {
+        .list {
+            li {
+                color: $white-color;
+            }
+        }
+    }
+
+    .doctor-item {
+        .content {
+            h3 {
+                color: $white-color;
+                transition: 0.5s;
+            }
+        }
+        &:hover {
+            .content {
+                h3 {
+                    color: $black-color;
+                }
+            }
+        }
+    }
+
+    .services-section {
+        &.bg-f4f6fe {
+            background-color: #07092b;
+        }
+    }
+    .services-item-two {
+        background-color: $black-color;
+    }
+
+    .goal-content-item {
+        background-color: #07092b;
+
+        .item-content {
+            .list {
+                li {
+                    color: #f1f1f1;
+                }
+            }
+        }
+    }
+
+    .single-shop {
+        .product-content {
+            h3 {
+                a {
+                    color: $white-color;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .partner-area {
+        background-color: #07092b;
+        border-top: 1px solid $black-color;
+    }
+
+    .emergency-form {
+        background-color: #07092b;
+
+        .form-group {
+            .form-control {
+                border: 1px dashed $black-color;
+                color: $white-color;
+                background-color: $black-color;
+    
+                &:focus {
+                    box-shadow: none;
+                }
+                &::placeholder {
+                    color: $white-color;
+                }
+            }
+            i {
+                color: $white-color;
+            }
+        }
+        .nice-select {
+            border: 1px dashed $black-color;
+            color: $white-color;
+            background-color: $black-color;
+    
+            .list {
+                background-color: $black-color;
+
+                .option {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .about-content {
+        .about-features {
+            li {
+                span {
+                    background-color: #07092b;
+                    color: $white-color;
+
+                    &::before {
+                        background-color: $main-color;
+                    }
+                    i {
+                        transition: 0.5s;
+                    }
+                    &:hover {
+                        i {
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+            &.two {
+                li {
+                    span {
+                        background-color: #07092b;
+                        color: $white-color;
+
+                        &::before {
+                            background-color: $main-color;
+                        }
+                        i {
+                            transition: 0.5s;
+                        }
+                        &:hover {
+                            i {
+                                color: $white-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .solutions-content {
+        .solutions-features {
+            li {
+                span {
+                    color: $white-color;
+                    background-color: #07092b;
+
+                    &::before {
+                        background-color: $main-color;
+                    }
+                    &::after {
+                        background-color: $white-color;
+                    }
+                    &:hover {
+                        color: $black-color;
+                    }
+                }
+                &:hover {
+                    span {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .banner-form {
+        background-color: $black-color;
+        form {
+            .form-group {
+                .form-control {
+                    color: $white-color;
+                }
+                &::placeholder {
+                    color: $white-color;
+                }
+                .nice-select {
+                    color: $white-color;
+
+                    .list {
+                        background-color: $black-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .projects-area {
+        &.two {
+            .section-title {
+                h2 {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .treatment-content  {
+        .treatment-features {
+            li {
+                span {
+                    color: $white-color;
+                    background-color: #07092b;
+
+                    &::before {
+                        background-color: $main-color;
+                    }
+                    &::after {
+                        background-color: $white-color;
+                    }
+                    &:hover {
+                        color: $black-color;
+                    }
+                }
+                &:hover {
+                    span {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .choose-area {
+        background-color: #07092b;
+    }
+
+    .choose-overview-content {
+        background-color: $black-color;
+    }
+
+    .clients-area {
+        background-color: #07092b;
+    }
+
+    .clients-slider {
+        .clients-item {
+            background-color: $black-color;
+        }
+    }
+
+    .services-area {
+        &.two {
+            position: relative;
+            z-index: 1;
+            
+            &::before {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 100%;
+                background-color: $black-color;
+                left: 0;
+                right: 0;
+                top: 0;
+                z-index: -1;
+                opacity: .95;
+            }
+            .section-title {
+                h2 {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .main-banner-item {
+        position: relative;
+        z-index: 1;
+        
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: $black-color;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: -1;
+            opacity: .90;
+        }
+    }
+
+    .single-counter {
+        background-color: #07092b;
+        border: 1px solid #07092b;
+
+        h3 {
+            .sign-icon {
+                color: $white-color;
+            }
+        }
+    }
+
+    .single-services {
+        border: 1px solid $black-color;
+    }
+
+    .faq-accordion-content {
+        background-color: #07092b;
+        
+        .accordion {
+            .accordion-item {
+                background: #07092b;
+                box-shadow: unset;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            .accordion-title {
+                color: $white-color;
+
+                &.active {
+                    border-bottom-color: $main-color;
+                }
+            }
+        }
+    }
+
+    .projects-area.bg-color {
+        background-color: $black-color;
+
+        .section-title {
+            h2 {
+                color: $white-color;
+            }
+        }
+    }
+
+    .projects-item-two {
+        .content {
+            background-color: #07092b;
+
+            h3 {
+                a {
+                    color: $white-color;
+                }
+            }
+            .see-btn {
+                color: $white-color;
+            }
+        }
+    }
+
+    .single-blog {
+        .image {
+            .date {
+                color: $white-color;
+                background-color: $black-color;
+            }
+        }
+        .content {
+            background-color: #07092b;
+        }
+    }
+
+    .service-details-content {
+        .service-details-info {
+            background-color: #07092b;
+
+            .single-info-box {
+                span {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .faq-contact-form {
+        form {
+            .form-control {
+                border: 1px dashed $black-color;
+                color: $white-color;
+                background-color: $black-color;
+    
+                &:focus {
+                    box-shadow: none;
+                }
+                &::placeholder {
+                    color: $white-color;
+                }
+            }
+        }
+    } 
+
+    .projects-details-desc {
+        .features-list {
+            li {
+                color: $white-color;
+            }
+        }
+    }
+
+    .widget-projects-area {
+        .widget_projects_info {
+            ul {
+                li {
+                    color: #f1f1f1;
+
+                    span {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .solution-details-content {
+        .details-list {
+            li {
+                color: $white-color;
+            }
+            i {
+                color: $white-color;
+            }
+        }
+    }
+
+    .solution-details-sidebar {
+        .content {
+            .list {
+                li {
+                    a {
+                        color: $white-color;
+                        background-color: #07092b;
+
+                        &:hover {
+                            background-color: $main-color;
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+        .details-form {
+            form {
+                .form-control {
+                    border: 1px dashed $black-color;
+                    color: $white-color;
+                    background-color: #07092b;
+        
+                    &:focus {
+                        box-shadow: none;
+                    }
+                    &::placeholder {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .sign-in-form {
+        background-color: #07092b;
+
+        form {
+            .form-control {
+                border: 1px dashed $black-color;
+                color: $white-color;
+                background-color: #07092b;
+    
+                &:focus {
+                    box-shadow: none;
+                }
+                &::placeholder {
+                    color: $white-color;
+                }
+            }
+            .form-check {
+                .form-check-label {
+                    color: $white-color;
+                }
+            }
+        }
+        .forgot-password {
+            a {
+                color: $white-color;
+            }
+        }
+        span {
+            color: $white-color;
+        }
+    }
+
+    .signup-form {
+        background-color: #07092b;
+
+        form {
+            .form-control {
+                border: 1px dashed $black-color;
+                color: $white-color;
+                background-color: #07092b;
+    
+                &:focus {
+                    box-shadow: none;
+                }
+                &::placeholder {
+                    color: $white-color;
+                }
+            }
+            .form-check {
+                .form-check-label {
+                    color: $white-color;
+                }
+            }
+        }
+        span {
+            color: $white-color;
+        }
+    }
+
+    .contact-info-box {
+        background-color: #07092b;
+
+        p {
+            a {
+                color: $white-color;
+            }
+        }
+    }
+
+    .contact-form {
+        form {
+            .form-control {
+                border: 1px dashed #07092b;
+                color: $white-color;
+                background-color: #07092b;
+    
+                &:focus {
+                    box-shadow: none;
+                }
+                &::placeholder {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .blog-item {
+        .image {
+            .date {
+                color: $white-color;
+                background-color: $black-color;
+            }
+        }
+    }
+
+    .widget-area {
+        .widget_search {
+            form {
+                background-color: #07092b;
+
+                .search-field { 
+                    border: 1px dashed $black-color;
+                    color: $white-color;
+                    background-color: $black-color;
+        
+                    &:focus {
+                        box-shadow: none;
+                    }
+                    &::placeholder {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+        .widget_content {
+            .list {
+                li {
+                    a {
+                        color: $white-color;
+                        background-color: #07092b;
+
+                        &:hover {
+                            background-color: $main-color;
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .widget_tinzer_posts_thumb {
+            .item {
+                .info {
+                    time {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .single-blog-details {
+        .content {
+            .list {
+                li {
+                    color: $white-color;
+                    
+                    a {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+        .quote {
+            background-color: #07092b;
+            
+            p {
+                color: $white-color;
+                
+                i {
+                    color: $white-color;
+                }
+            }
+            &:hover {
+                background-color: $main-color;
+
+                p {
+                    color: $white-color;
+                    i {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    
+        .post-tags {
+            .tags {
+                li {
+                    span {
+                        color: $white-color;
+                    }
+                    a {
+                        background-color: #07092b;
+                        color: $white-color;
+                        
+                        &:hover {
+                            background-color: $main-color;
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .related-posts {
+            .posts-item {
+                .image {
+                    .date {
+                        color: $white-color;
+                        background-color: $black-color;
+                    }
+                }
+                .content {
+                    h3 {
+                        a {
+                            color: $white-color;
+
+                            &:hover {
+                                color: $main-color;
+                            }
+                        }
+                    } 
+                    .posts-btn {
+                        color: $main-color;
+                    }
+                }
+            
+                &:hover {
+                    .content {
+                        h3 {
+                            a {
+                                color: $main-color;
+                            }
+                        }
+                        .posts-btn {
+                            color: $main-color;
+                        }
+                    }
+            
+                    .image {
+                        .date {
+                            color: $white-color;
+                            background-color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .comments-area {
+            .comment-body {
+                border: 1px solid #07092b;
+                color: $white-color;
+                background-color: #07092b;
+
+                .reply {
+                    a {
+                        border: 1px solid #07092b;
+                        color: $white-color;
+
+                        &:hover {
+                            color: $white-color;
+                            background-color: $main-color;
+                            border-color: $main-color;
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: transparent;
+                    border: 1px solid #07092b;
+                }
+            }
+            .comment-metadata {
+                color: $white-color;
+
+                a {
+                    color: $white-color;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+            .comment-respond {
+                background-color: #07092b;
+
+                label {
+                    color: $white-color;
+                }
+                input[type="date"], input[type="time"], input[type="datetime-local"], input[type="week"], input[type="month"], input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea {
+                    background-color: $black-color;
+                    border: 1px solid $black-color;
+                    color: $white-color;
+        
+                    &:focus {
+                        border-color: $main-color;
+                    }
+                }
+                .comment-form-cookies-consent {
+                    label {
+                        color: $white-color;
+                    }
+                }
+                .form-submit {
+                    input {
+                        background: $main-color;
+                        color: $white-color;
+                        
+                        &:hover, &:focus {
+                            color: $white-color;
+                            background-color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive CSS
+
+    @media only screen and (max-width: 767px) {
+        .navbar-area {
+            background-color: $black-color;
+        }
+        .main-responsive-nav {
+            .mean-container {
+                a {
+                    &.meanmenu-reveal {
+                        color: $white-color;
+                        span {
+                            background: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .navbar-area {
+            background-color: $black-color;
+        }
+        .main-responsive-nav {
+            .mean-container {
+                a {
+                    &.meanmenu-reveal {
+                        color: $white-color;
+                        span {
+                            background: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        
+    }
+}
